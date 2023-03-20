@@ -1,6 +1,7 @@
-﻿using InforceTestTask.Models;
+﻿using System.Diagnostics;
+using InforceTestTask.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace InforceTestTask.Controllers
 {
@@ -18,6 +19,7 @@ namespace InforceTestTask.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult About()
         {
             return View();
@@ -26,7 +28,7 @@ namespace InforceTestTask.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorVW { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
