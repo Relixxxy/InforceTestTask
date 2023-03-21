@@ -1,6 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "About";
 }
 <h1>@ViewData["Title"]</h1>
-
-<p>Use this page to detail your site's privacy policy.</p>
+<h2>Explanation of shorten algorithm</h2>
+<p>This is an algorithmic procedure designed to transform lengthy website links into abbreviated forms. The program employs a cryptographic hash function known as SHA256 to compute a condensed representation of the original URL in the form of a hexadecimal string. This string is subsequently truncated to its first 15 characters to form a shorter hexadecimal code. The shortened code is then converted back to a sequence of bytes and transformed into a Base64 string. Finally, the first 30 characters of the resulting Base64 string are extracted to create a compact URL that redirects to the same web page as the original link.</p>
