@@ -1,8 +1,8 @@
-using InforceTestTask.Services.Interfaces;
+using InforceTestTask.Infrastructure.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace InforceTestTask.Services;
+namespace InforceTestTask.Infrastructure.Services;
 
 public class DbContextWrapper<T> : IDbContextWrapper<T>
     where T : DbContext

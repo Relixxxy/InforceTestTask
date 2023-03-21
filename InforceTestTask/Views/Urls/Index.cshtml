@@ -33,14 +33,14 @@
                     @Html.DisplayFor(modelItem => item.CreatedBy)
                 </td>
                 <td>
-                    <a href="@item.OriginalUrl">@item.ShortUrl</a>
+                    <a href="@item.OriginalUrl" target="_blank">@item.ShortUrl</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CreatedDate)
                 </td>
                 <td>
-                    @Html.ActionLink("Info", "UrlInfo", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Info", "UrlInfo", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                 </td>
             </tr>
         }

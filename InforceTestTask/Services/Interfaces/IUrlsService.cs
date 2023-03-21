@@ -7,5 +7,5 @@ public interface IUrlsService
     Task<ShortUrlVM> GetUrlAsync(int id);
     Task<IEnumerable<ShortUrlVM>> GetUrlsListAsync();
     Task<int?> AddUrlAsync(string originalUrl, string createdBy);
-    Task<bool> DeleteUrAsync(int id);
+    Task<bool> DeleteUrlAsync(int id);
 }

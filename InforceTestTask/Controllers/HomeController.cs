@@ -16,10 +16,9 @@ namespace InforceTestTask.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(string message, int status)
         {
-            return View(new ErrorVW { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorVW { Message = message, Status = status });
         }
     }
 }

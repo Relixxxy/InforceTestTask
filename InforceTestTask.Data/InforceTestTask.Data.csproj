@@ -21,4 +21,8 @@
 		</PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\InforceTestTask.Infrastructure\InforceTestTask.Infrastructure.csproj" />
+	</ItemGroup>
+
 </Project>

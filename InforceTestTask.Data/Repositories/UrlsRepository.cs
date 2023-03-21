@@ -1,6 +1,7 @@
 ﻿using InforceTestTask.Data.Contexts;
 using InforceTestTask.Data.Entities;
 using InforceTestTask.Data.Repositories.Interfaces;
+using InforceTestTask.Infrastructure.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace InforceTestTask.Data.Repositories;
@@ -24,13 +25,18 @@ public class UrlsRepository : IUrlsRepository
             CreatedDate = DateTime.Now,
         };
 
+        if (_context.ShortUrls.Any(u => u.OriginalUrl == originalUrl))
+        {
+            throw new BusinessException("Url is already exists!", 409);
+        }
+
         var result = await _context.AddAsync(url);
         await _context.SaveChangesAsync();
 
         return result.Entity.Id;
     }
 
-    public async Task<bool> DeleteUrAsync(int id)
+    public async Task<bool> DeleteUrlAsync(int id)
     {
         var url = await GetUrlAsync(id);
 

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InforceTestTask", "InforceT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InforceTestTask.Data", "InforceTestTask.Data\InforceTestTask.Data.csproj", "{1A311243-8732-4659-9B9B-0A2736765D38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InforceTestTask.Infrastructure", "InforceTestTask.Infrastructure\InforceTestTask.Infrastructure.csproj", "{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1A311243-8732-4659-9B9B-0A2736765D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A311243-8732-4659-9B9B-0A2736765D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A311243-8732-4659-9B9B-0A2736765D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

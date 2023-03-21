@@ -1,7 +1,9 @@
-using InforceTestTask.Services.Interfaces;
+using InforceTestTask.Infrastructure.Exceptions;
+using InforceTestTask.Infrastructure.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
-namespace InforceTestTask.Services;
+namespace InforceTestTask.Infrastructure.Services;
 
 public abstract class BaseDataService<T>
     where T : DbContext
@@ -31,6 +33,10 @@ public abstract class BaseDataService<T>
 
             await transaction.CommitAsync(cancellationToken);
         }
+        catch (BusinessException)
+        {
+            throw;
+        }
         catch (Exception ex)
         {
             await transaction.RollbackAsync(cancellationToken);
@@ -49,6 +55,10 @@ public abstract class BaseDataService<T>
             await transaction.CommitAsync(cancellationToken);
 
             return result;
+        }
+        catch (BusinessException)
+        {
+            throw;
         }
         catch (Exception ex)
         {

@@ -1,6 +1,9 @@
 using InforceTestTask.Data.Contexts;
 using InforceTestTask.Data.Repositories;
 using InforceTestTask.Data.Repositories.Interfaces;
+using InforceTestTask.Infrastructure.Filters;
+using InforceTestTask.Infrastructure.Services;
+using InforceTestTask.Infrastructure.Services.Interfaces;
 using InforceTestTask.Services;
 using InforceTestTask.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -8,7 +11,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+});
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AuthConnection")));

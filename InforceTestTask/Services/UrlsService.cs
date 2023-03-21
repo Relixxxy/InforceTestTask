@@ -3,6 +3,8 @@ using System.Text;
 using AutoMapper;
 using InforceTestTask.Data.Contexts;
 using InforceTestTask.Data.Repositories.Interfaces;
+using InforceTestTask.Infrastructure.Services;
+using InforceTestTask.Infrastructure.Services.Interfaces;
 using InforceTestTask.Services.Interfaces;
 using InforceTestTask.ViewModels;
 
@@ -40,9 +42,9 @@ public class UrlsService : BaseDataService<UrlsDbContext>, IUrlsService
         return result;
     }
 
-    public async Task<bool> DeleteUrAsync(int id)
+    public async Task<bool> DeleteUrlAsync(int id)
     {
-        var result = await ExecuteSafeAsync(() => _repository.DeleteUrAsync(id));
+        var result = await ExecuteSafeAsync(() => _repository.DeleteUrlAsync(id));
 
         if (result)
         {
@@ -63,7 +65,7 @@ public class UrlsService : BaseDataService<UrlsDbContext>, IUrlsService
             var urlEntity = await _repository.GetUrlAsync(id);
             var urlVM = _mapper.Map<ShortUrlVM>(urlEntity);
 
-            _logger.LogWarning($"Url with id {id} has found and mapped to vm!");
+            _logger.LogInformation($"Url with id {id} has found and mapped to vm!");
 
             return urlVM;
         });
@@ -76,7 +78,7 @@ public class UrlsService : BaseDataService<UrlsDbContext>, IUrlsService
             var urlEntities = await _repository.GetUrlsListAsync();
             var urlVMs = urlEntities.Select(_mapper.Map<ShortUrlVM>);
 
-            _logger.LogWarning($"{urlEntities.Count()} urls has found and mapped to vm!");
+            _logger.LogInformation($"{urlEntities.Count()} urls has found and mapped to vm!");
 
             return urlVMs;
         });
