@@ -27,8 +27,4 @@
 	  <ProjectReference Include="..\InforceTestTask.Data\InforceTestTask.Data.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Views\Urls\" />
-	</ItemGroup>
-
 </Project>

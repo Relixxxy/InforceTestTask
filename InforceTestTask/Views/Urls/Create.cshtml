@@ -1,0 +1,32 @@
+﻿@model InforceTestTask.ViewModels.CreateUrlVM
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>ShortUrlVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OriginalUrl" class="control-label mb-2"></label>
+                <input asp-for="OriginalUrl" class="form-control" />
+                <span asp-validation-for="OriginalUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3 d-flex justify-content-between">
+                <a asp-action="Index">Back to List</a>
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
