@@ -10,5 +10,10 @@ namespace InforceTestTask.Controllers
         {
             return View();
         }
+
+        public IActionResult UrlInfo(int id)
+        {
+            return View();
+        }
     }
 }
