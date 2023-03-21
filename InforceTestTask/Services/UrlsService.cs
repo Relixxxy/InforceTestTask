@@ -65,9 +65,16 @@ public class UrlsService : BaseDataService<UrlsDbContext>, IUrlsService
             var urlEntity = await _repository.GetUrlAsync(id);
             var urlVM = _mapper.Map<ShortUrlVM>(urlEntity);
 
-            _logger.LogInformation($"Url with id {id} has found and mapped to vm!");
+            if (urlVM is null)
+            {
+                _logger.LogWarning($"Url with id {id} hasn't found!");
+            }
+            else
+            {
+                _logger.LogInformation($"Url with id {id} has found and mapped to vm!");
+            }
 
-            return urlVM;
+            return urlVM !;
         });
     }
 
