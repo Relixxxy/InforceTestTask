@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InforceTestTask", "InforceTestTask\InforceTestTask.csproj", "{D45280D1-6523-4CA7-B629-996A5A16A8A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InforceTestTask", "InforceTestTask\InforceTestTask.csproj", "{D45280D1-6523-4CA7-B629-996A5A16A8A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InforceTestTask.Data", "InforceTestTask.Data\InforceTestTask.Data.csproj", "{1A311243-8732-4659-9B9B-0A2736765D38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InforceTestTask.Data", "InforceTestTask.Data\InforceTestTask.Data.csproj", "{1A311243-8732-4659-9B9B-0A2736765D38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InforceTestTask.Infrastructure", "InforceTestTask.Infrastructure\InforceTestTask.Infrastructure.csproj", "{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1A311243-8732-4659-9B9B-0A2736765D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A311243-8732-4659-9B9B-0A2736765D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A311243-8732-4659-9B9B-0A2736765D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A0CE18-A090-472F-A6A4-A4FD86ADF4DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
